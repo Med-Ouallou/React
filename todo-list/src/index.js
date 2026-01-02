@@ -1,23 +1,39 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 
-const firstBook = {
-    title : 'El Jaiz wa ghair Ljaiz fi nikah L3ajaiz',
-    author : 'mohamed ouallou',
-}
+// const firstBook = {
+//     title : 'El Jaiz wa ghair Ljaiz fi nikah L3ajaiz',
+//     author : 'mohamed ouallou',
+// }
 
-const secondBook = {
-    title : 'fuck Lwatan',
-    author : 'Hokage 6',
-}
+// const secondBook = {
+//     title : 'fuck Lwatan',
+//     author : 'Hokage 6',
+// }
 
+const Books = [
+    {
+        title : 'El Jaiz wa ghair Ljaiz fi nikah L3ajaiz',
+        author : 'mohamed ouallou',
+    },
+    {
+        title : 'fuck Lwatan',
+        author : 'Hokage 6',
+    }
+]
+
+const Names = ['Salah','Mohamed','Amine'];
+const newNames = Names.map((name) => {
+    return <h1>{name}</h1>
+});
+
+console.log(newNames);
 
 
 function BookList(){
     return (
         <section>
-            <Book title={firstBook.title} auth={firstBook.author}/>
-            <Book title={secondBook.title} auth={secondBook.author}/>
+            
         </section>
     );
 }
