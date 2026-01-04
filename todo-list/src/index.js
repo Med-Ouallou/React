@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import {Books} from "./Book"
 
 // const firstBook = {
 //     title : 'El Jaiz wa ghair Ljaiz fi nikah L3ajaiz',
@@ -11,18 +12,7 @@ import ReactDOM from "react-dom/client";
 //     author : 'Hokage 6',
 // }
 
-const Books = [
-    {
-        id: 1,
-        title: "El Jaiz wa ghair Ljaiz fi nikah L3ajaiz",
-        author: "mohamed ouallou",
-    },
-    {
-        id: 2,
-        title: "fuck Lwatan",
-        author: "Simo 6",
-    },
-];
+
 
 //! Example ==========
 // const Names = ["Salah", "Mohamed", "Amine"];
@@ -47,43 +37,44 @@ const Books = [
 //* the soluction is maping the object
 
 function BookList() {
-    const name = "mohamed";
-    const dispalName = () => {
-        console.log(name);
-    };
+    function getBook(id) {
+        const result = Books.find((book) => book.id === id);
+        console.log(result);
+    }
+
     return (
         <section>
-            <ExampleEvent />
-            {Books.map((book) => {
+            {/* <ExampleEvent /> */}
+            {Books.map((book,index) => {
                 // const {title,author,id} = book;
-                // or book.title
-                return <Book key={book.id} disName={dispalName} {...book} />;
+                // or book.title                
+                return <Book key={book.id} num={index} getBook={getBook} {...book} />;
             })}
         </section>
     );
 }
 
-const ExampleEvent = () => {
-    const handelInput = () => {
-        console.log("input chnaged");
-    };
-    // const handelButton = () => {
-    //     alert("button clicked just now");
-    // };
-    return (
-        <section>
-            <form action="">
-                <input type="text" name="example" onChange={handelInput} />
-            </form>
-            <button
-                onClick={() => {
-                    alert("button clicked just now");
-                }}>
-                click me
-            </button>
-        </section>
-    );
-};
+// const ExampleEvent = () => {
+//     const handelInput = () => {
+//         console.log("input chnaged");
+//     };
+//     // const handelButton = () => {
+//     //     alert("button clicked just now");
+//     // };
+//     return (
+//         <section>
+//             <form action="">
+//                 <input type="text" name="example" onChange={handelInput} />
+//             </form>
+//             <button
+//                 onClick={() => {
+//                     alert("button clicked just now");
+//                 }}>
+//                 click me
+//             </button>
+//         </section>
+//     );
+// };
 
 // to type to get your props :
 // 1 - const {title , author} = props;
@@ -91,14 +82,17 @@ const ExampleEvent = () => {
 
 //! Book component
 const Book = (props) => {
-    const { title, author,disName } = props;
-    // console.log(props);
+    const { id, title, author, getBook ,num} = props;
+    // const getsinglbook = () => {
+    //     getBook(id);
+    // };
     return (
         <article>
             <img src="null" alt="book image" />
             <h2>{title}</h2>
             <h2>{author}</h2>
-            <button onClick={disName}>displayName</button>
+            <h2>{num+1}</h2>
+            <button onClick={() => {getBook(id)}}>getBook</button>
         </article>
     );
 };
