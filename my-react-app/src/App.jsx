@@ -1,0 +1,12 @@
+import React from "react";
+import Todo from "./components/Todo";
+
+const App = () => {
+    return (
+      <div className="m-10 flex flex-col items-center justify-center ">
+        <Todo/>
+      </div>
+    )
+};
+
+export default App;
