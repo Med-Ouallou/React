@@ -22,6 +22,7 @@ const Todo = () => {
         inputRef.current.value = "";
     };
     // ! end logic ----------------------------
+    
     // * Delete function ----------------------
     const deleteTask = (id) => {
         let newArray = task.filter((task) => task.id !== id);
