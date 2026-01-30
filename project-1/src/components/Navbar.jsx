@@ -7,7 +7,7 @@ const Navbar = ({ theme, setTheme }) => {
     return (
         <div
             className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky
-                      top-0 z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-gray-900/70">
+                    top-0 z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-gray-900/70">
             <img
                 src={theme === "dark" ? assets.logo_dark : assets.logo}
                 className="w:32 sm:40"
@@ -27,21 +27,41 @@ const Navbar = ({ theme, setTheme }) => {
                     }}
                 />
 
-                <a href="#" className="sm:hover:border-b" onClick={()=>{SetSideBarOpen(false)}}>
+                <a
+                    href="#"
+                    className="sm:hover:border-b"
+                    onClick={() => {
+                        SetSideBarOpen(false);
+                    }}>
                     Home
                 </a>
-                <a href="#services" className="sm:hover:border-b" onClick={()=>{SetSideBarOpen(false)}}>
+                <a
+                    href="#services"
+                    className="sm:hover:border-b"
+                    onClick={() => {
+                        SetSideBarOpen(false);
+                    }}>
                     Services
                 </a>
-                <a href="#our-work" className="sm:hover:border-b"onClick={()=>{SetSideBarOpen(false)}}>
+                <a
+                    href="#our-work"
+                    className="sm:hover:border-b"
+                    onClick={() => {
+                        SetSideBarOpen(false);
+                    }}>
                     Our Work
                 </a>
-                <a href="#contact-us" className="sm:hover:border-b" onClick={()=>{SetSideBarOpen(false)}}>
+                <a
+                    href="#contact-us"
+                    className="sm:hover:border-b"
+                    onClick={() => {
+                        SetSideBarOpen(false);
+                    }}>
                     Contact Us
                 </a>
             </div>
 
-            <div className='flex items-center gap-2 sm:gap-4'>
+            <div className="flex items-center gap-2 sm:gap-4">
                 <img
                     src={
                         theme === "dark"
@@ -54,7 +74,7 @@ const Navbar = ({ theme, setTheme }) => {
                     alt=""
                     className="w-8 sm:hidden"
                 />
-                <ThemeButton theme={theme} setTheme={setTheme}/>
+                <ThemeButton theme={theme} setTheme={setTheme} />
                 <a
                     href="#Contact-Us"
                     className="text-sm max-sm:hidden flex items-center gap-2 text-white bg-purple-700 px-6 py-2 rounded-full cursor-pointer hover:scale-103 transition-all">

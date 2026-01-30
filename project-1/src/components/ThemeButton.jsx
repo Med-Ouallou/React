@@ -5,13 +5,15 @@ const ThemeButton = (props) => {
     const { theme, setTheme } = props;
 
     useEffect(() => {
+        // ! this code checke the theme of our system dark or light
         const prefersDarkMode = window.matchMedia(
             "(prefers-color-scheme: dark)",
         ).matches;
-
+        // ! if theme (dark) and system (dark) we go with 1st else with 2nd
         setTheme(theme || (prefersDarkMode ? 'dark' : 'light'))
     }, []);
 
+    // ! this useEffect render whene ever the theme is changed
     useEffect(() => {
         if (theme === "dark") {
             document.documentElement.classList.add("dark");
