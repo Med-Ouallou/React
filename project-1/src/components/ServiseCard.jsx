@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 
 const ServiseCard = (props) => {
-    const { service, index } = props;
+    const { service,index} = props;
     const [posation, setPosition] = useState({ x: 0, y: 0 });
     const [visibel, setVisible] = useState(false);
 
@@ -17,7 +17,7 @@ const ServiseCard = (props) => {
                 onMouseLeave={() => setVisible(false)}
                 ref={divRef} onMouseMove={handelMouseMove}>
             <div
-                className={`pointer-events-none blur-2xl rounded-full bg-linear-to-r from-blue-500 via-indigo-500 to-purple-500 w-[300px] h-[300px] absolute z-0 transition-opacity duration-500 mix-blend-lighten ${visibel ? "opacity-70" : "opacity-0"}`}
+                className={`pointer-events-none blur-2xl rounded-full bg-linear-to-r from-blue-500 via-indigo-500 to-purple-500 w-75 h-75 absolute z-0 transition-opacity duration-500 mix-blend-lighten ${visibel ? "opacity-70" : "opacity-0"}`}
                 style={{ top: posation.y - 150, left: posation.x - 150 }}
             />
             <div className="flex items-center gap-10 p-8 hover:p-7.5 hover:m-0.5 transition-all rounded-[10px] bg-white dark:bg-gray-900 z-10 relative">
